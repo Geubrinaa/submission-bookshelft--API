@@ -243,7 +243,6 @@ const editBookHandler = (request, h) => {
 };
 const deleteBookHandler = (request, h) => {
   const { bookId } = request.params;
-  const index = main.findIndex((book) => book.id === bookId);
   if (index !== -1) {
     main.splice(index, 1);
     const response = h.response({
@@ -260,7 +259,6 @@ const deleteBookHandler = (request, h) => {
   response.code(200);
   return response;
 };
-
 module.exports = {
   inBookHandler,
   outAllBookHandler,
