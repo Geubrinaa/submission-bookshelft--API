@@ -236,7 +236,7 @@ const editBookHandler = (request, h) => {
   //Jika Id yang dilampirkan oleh client tidak ditemukkan oleh server
   const response = h.response({
     status: "fail",
-    message: "Gagal memeperbaharui buku. Id tidak di temukan",
+    message: "Gagal memperbaharui buku. Id tidak di temukan",
   });
   response.code(404);
   return response;
@@ -245,20 +245,20 @@ const deleteBookHandler = (request, h) => {
   const { bookId } = request.params;
   if (index !== -1) {
     main.splice(index, 1);
-    const response = h.response({
-      status: "fail",
-      message: "Buku gagal dihapus. Id tidak ditemukan",
-    });
-    response.code(404);
-    return response;
-  }
   const response = h.response({
     status: "success",
     message: "Buku berhasil dihapus",
   });
   response.code(200);
   return response;
-};
+}
+    const response = h.response({
+      status: "fail",
+      message: "Buku gagal dihapus. Id tidak ditemukan",
+    });
+    response.code(404);
+    return response;
+  };
 module.exports = {
   inBookHandler,
   outAllBookHandler,
