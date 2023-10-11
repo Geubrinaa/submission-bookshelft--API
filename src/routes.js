@@ -34,7 +34,7 @@ const routes = [
   // API untuk menghapus data buku
   {
     method: "DELETE",
-    path: "/books/{booksId}",
+    path: "/books/{bookId}",
     handler: deleteBookHandler,
   },
 ];
